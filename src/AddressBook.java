@@ -30,6 +30,10 @@ public class AddressBook {
     /**
      * removes a person to the List of Buddys
      */
+    public ArrayList<BuddyInfo> GetBuddyInfo () {
+        return book;
+    }
+
     public BuddyInfo removeBuddy(int index) {
         if (index >= 0 && index < book.size()) {
             return book.remove(index);
