@@ -11,19 +11,24 @@ public class AddressBook {
         BuddyInfo bud_1 = new BuddyInfo("jet", "420-420-9999", "4 ontario st");
         AddressBook addressbook = new AddressBook();
         addressbook.addBuddy(bud_1);
-        addressbook.removeBuddy(bud_1);
+        addressbook.removeBuddy(0);
     }
 
     /**
      * Adds a person to the List of Buddys
      */
     public void addBuddy(BuddyInfo bud) {
-        book.add(bud);
+        if (bud != null){
+            book.add(bud);
+        }
     }
     /**
      * removes a person to the List of Buddys
      */
-    public void removeBuddy(BuddyInfo bud) {
-        book.remove(bud);
+    public BuddyInfo removeBuddy(int index) {
+        if (index >= 0 && index < book.size()) {
+            return book.remove(index);
+        }
+        return null;
     }
 }
